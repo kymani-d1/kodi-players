@@ -1,0 +1,14 @@
+{
+  "name": "[COLOR yellow]Umbrella → Seren (Fallback)[/COLOR]",
+  "plugin": "plugin.video.umbrella",
+  "priority": 1,
+  "is_resolvable": "false",
+
+  "play_movie": "plugin://plugin.video.umbrella/?action=play&title={title_url}&year={year}&imdb={imdb}&tmdb={tmdb}&select=1",
+  "play_episode": "plugin://plugin.video.umbrella/?action=play&title={title_url}&year={showyear}&imdb={imdb}&tmdb={tmdb}&tvdb={tvdb}&season={season}&episode={episode}&select=1",
+
+  "fallback": {
+    "play_movie": "plugin://plugin.video.seren/?action=getSources&forceresumecheck=true&actionArgs=%7B%22item_type%22%3A%20%22movie%22%2C%20%22trakt_id%22%3A%20{trakt}%7D",
+    "play_episode": "plugin://plugin.video.seren/?action=getSources&smartPlay=false&source_select=false&forceresumecheck=true&actionArgs=%7B%22episode%22%3A%20{episode}%2C%20%22item_type%22%3A%20%22episode%22%2C%20%22season%22%3A%20{season}%2C%20%22trakt_id%22%3A%20{trakt}%7D"
+  }
+}
